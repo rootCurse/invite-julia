@@ -1,0 +1,19 @@
+{
+  "name": "sasha-yulia-wedding",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "@fontsource/yeseva-one": "^5.1.0",
+    "@fontsource/montserrat": "^5.1.0",
+    "@fontsource/marck-script": "^5.1.0"
+  }
+}

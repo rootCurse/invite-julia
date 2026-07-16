@@ -1,0 +1,534 @@
+/* ===== 1. Cover ===== */
+.cover {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-24);
+  text-align: center;
+  padding-top: 96px;
+}
+
+.cover__frame {
+  width: 240px;
+  height: 240px;
+  max-width: 60vw;
+  max-height: 60vw;
+  border: 1px solid var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: envelope-open 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.cover__monogram {
+  font: var(--text-monogram);
+  margin: 0;
+}
+
+.cover__names {
+  font: var(--text-h1-names);
+  margin: 0;
+  animation: envelope-fade-up 0.8s ease both;
+  animation-delay: 0.3s;
+}
+
+.cover__date {
+  font: var(--text-button);
+  letter-spacing: 0.2em;
+  margin: 0;
+  animation: envelope-fade-up 0.8s ease both;
+  animation-delay: 0.45s;
+}
+
+.cover__hint {
+  font: var(--text-label);
+  letter-spacing: 0.12em;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+  animation: envelope-fade-up-dim 0.8s ease both;
+  animation-delay: 0.6s;
+}
+
+@keyframes envelope-open {
+  from {
+    opacity: 0;
+    transform: scale(0.85) rotateX(20deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotateX(0deg);
+  }
+}
+
+@keyframes envelope-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes envelope-fade-up-dim {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 0.7;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cover__frame,
+  .cover__names,
+  .cover__date,
+  .cover__hint {
+    animation: none;
+  }
+}
+
+.cover__hint:hover {
+  opacity: 1;
+}
+
+/* ===== 2. Welcome ===== */
+.welcome {
+  text-align: center;
+}
+
+.welcome .section__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+  max-width: 560px;
+}
+
+.welcome__text {
+  font: var(--text-h3-sub);
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* ===== 3. Countdown ===== */
+.countdown {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-24);
+}
+
+.countdown__row {
+  display: flex;
+  gap: var(--space-8);
+}
+
+.countdown__unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  padding-inline: var(--space-8);
+  min-width: 64px;
+}
+
+.countdown__num {
+  font: var(--text-countdown-num);
+  font-variant-numeric: tabular-nums;
+}
+
+.countdown__label {
+  font: var(--text-body-small);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* ===== 4. Event details ===== */
+.event-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+  text-align: center;
+  padding-block: var(--space-24);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+.event-row--last {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.event-details .heading {
+  margin-bottom: var(--space-32);
+}
+
+.event-row__time {
+  font: var(--text-date-large);
+}
+
+.event-row__time--tbd {
+  font-size: 18px;
+}
+
+.event-row__addr {
+  font: var(--text-body-small);
+  opacity: 0.6;
+}
+
+/* ===== 5. Schedule ===== */
+.schedule {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.schedule__note {
+  font: var(--text-body-small);
+  opacity: 0.55;
+  margin-top: var(--space-8);
+  text-align: center;
+}
+
+.schedule__list {
+  list-style: none;
+  margin: var(--space-32) 0 0;
+  padding: 0;
+  width: 100%;
+  max-width: 420px;
+}
+
+.schedule__item {
+  display: flex;
+  gap: var(--space-16);
+  padding-block: var(--space-12);
+}
+
+.schedule__time {
+  font: var(--text-button);
+  min-width: 56px;
+  flex-shrink: 0;
+}
+
+.schedule__item span:last-child {
+  opacity: 0.85;
+}
+
+/* ===== 6. Location ===== */
+.location__map-placeholder {
+  height: 220px;
+  background: #ececec;
+  border: 1px solid var(--color-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-block: var(--space-24);
+}
+
+.location__map-placeholder span {
+  font: var(--text-label);
+  letter-spacing: 0.08em;
+  opacity: 0.4;
+  text-align: center;
+  padding: 0 var(--space-16);
+}
+
+.location__row {
+  display: flex;
+  gap: var(--space-12);
+  align-items: baseline;
+  padding-block: var(--space-8);
+}
+
+.location__row-label {
+  font: var(--text-button);
+  flex-shrink: 0;
+  min-width: 96px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.location__row p {
+  opacity: 0.75;
+}
+
+/* ===== 7. Dress code ===== */
+.dresscode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-24);
+  text-align: center;
+}
+
+.dresscode__swatches {
+  display: flex;
+  gap: var(--space-16);
+}
+
+.dresscode__swatch {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--color-white);
+}
+
+.dresscode__swatch--black {
+  background: var(--color-black);
+}
+
+.dresscode__swatch--white {
+  background: var(--color-white);
+}
+
+.dresscode__text {
+  max-width: 320px;
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+/* ===== 8. Love story ===== */
+.love-story__timeline {
+  list-style: none;
+  margin: var(--space-32) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.love-story__point {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+  text-align: center;
+}
+
+.love-story__photo {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 4 / 3;
+  background: repeating-linear-gradient(45deg, #eee, #eee 10px, #f7f7f7 10px, #f7f7f7 20px);
+  border: 1px solid var(--color-hairline);
+}
+
+.love-story__caption {
+  max-width: 420px;
+  opacity: 0.75;
+  line-height: 1.6;
+}
+
+/* ===== 9 & 10. RSVP / Survey forms ===== */
+.rsvp__note,
+.survey__note {
+  text-align: center;
+  opacity: 0.6;
+  font: var(--text-body-small);
+  margin-top: var(--space-8);
+}
+
+.rsvp__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  margin-top: var(--space-32);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.field--fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.field__label {
+  font: var(--text-label);
+  letter-spacing: 0.04em;
+  opacity: 0.85;
+}
+
+.field__input {
+  font: var(--text-body);
+  background: transparent;
+  border: 1px solid var(--color-hairline);
+  color: inherit;
+  padding: var(--space-12);
+  border-radius: 2px;
+  width: 100%;
+}
+
+.section--dark .field__input {
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.field__input:focus {
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+}
+
+.field__input--kids {
+  margin-top: var(--space-8);
+  max-width: 160px;
+}
+
+.field__input--kids:disabled {
+  opacity: 0.35;
+}
+
+.radio-row {
+  display: flex;
+  gap: var(--space-24);
+}
+
+.radio {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  font: var(--text-body);
+  font-size: 15px;
+}
+
+.radio input[type="radio"] {
+  accent-color: currentColor;
+}
+
+.button {
+  font: var(--text-button);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--color-white);
+  color: var(--color-black);
+  border: 1px solid var(--color-white);
+  padding: var(--space-16) var(--space-24);
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button--dark {
+  background: var(--color-black);
+  color: var(--color-white);
+  border-color: var(--color-black);
+}
+
+.rsvp__status {
+  min-height: 1.2em;
+  font: var(--text-body-small);
+  text-align: center;
+}
+
+.rsvp__status[data-state="success"] {
+  opacity: 1;
+}
+
+/* ===== 11. Second day ===== */
+.second-day {
+  text-align: center;
+}
+
+.second-day__text {
+  margin-top: var(--space-16);
+  opacity: 0.6;
+}
+
+/* ===== 12. Contacts ===== */
+.contacts {
+  text-align: center;
+}
+
+.contacts__note {
+  opacity: 0.6;
+  margin-top: var(--space-8);
+  font: var(--text-body-small);
+}
+
+.contacts__card {
+  margin-top: var(--space-32);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.contacts__name {
+  font: var(--text-h3-sub);
+}
+
+.contacts__row {
+  opacity: 0.75;
+}
+
+/* ===== 13. Footer ===== */
+.footer {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.footer__thanks {
+  font: var(--text-h3-sub);
+}
+
+.footer__names {
+  font: var(--text-monogram);
+  font-size: 32px;
+}
+
+.footer__date {
+  font: var(--text-body-small);
+  letter-spacing: 0.12em;
+  opacity: 0.6;
+}
+
+/* ===== Responsive: desktop widen for grid-friendly sections ===== */
+@media (min-width: 900px) {
+  .countdown__row {
+    gap: var(--space-24);
+  }
+
+  .love-story__point {
+    flex-direction: row;
+    text-align: left;
+    gap: var(--space-32);
+  }
+
+  .love-story__point:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .love-story__photo {
+    max-width: 320px;
+    flex-shrink: 0;
+  }
+
+  .schedule__list {
+    max-width: 480px;
+  }
+
+  .event-row {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .event-row__addr {
+    text-align: right;
+  }
+}
