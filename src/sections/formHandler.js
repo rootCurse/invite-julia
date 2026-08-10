@@ -48,8 +48,15 @@ function initForm({ formId, statusId, sheetName, successMessage }) {
     submitButton.disabled = true;
     setStatus(status, "Отправляем…", "pending");
 
-    const data = Object.fromEntries(new FormData(form).entries());
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
     delete data.company;
+
+    // Чекбоксы с одинаковым name (напр. drinks) — собираем все отмеченные значения в массив
+    form.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+      const values = formData.getAll(checkbox.name);
+      if (values.length > 1) data[checkbox.name] = values;
+    });
 
     try {
       await submitToSheet(sheetName, data);

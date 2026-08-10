@@ -8,6 +8,10 @@
   gap: var(--space-24);
   text-align: center;
   padding-top: 96px;
+  position: relative;
+  background-image: linear-gradient(rgba(18, 18, 18, 0.55), rgba(18, 18, 18, 0.55)), url("/photos/cover-bg.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .cover__frame {
@@ -84,11 +88,22 @@
   }
 }
 
+@keyframes pulse-scale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.06);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cover__frame,
   .cover__names,
   .cover__date,
-  .cover__hint {
+  .cover__hint,
+  .welcome__title--pulse {
     animation: none;
   }
 }
@@ -108,6 +123,16 @@
   align-items: center;
   gap: var(--space-16);
   max-width: 560px;
+}
+
+.welcome__title {
+  font: var(--text-h1-names);
+  margin: 0;
+}
+
+.welcome__title--pulse {
+  display: inline-block;
+  animation: pulse-scale 2.4s ease-in-out infinite;
 }
 
 .welcome__text {
@@ -242,15 +267,13 @@
 
 .location__row {
   display: flex;
-  gap: var(--space-12);
-  align-items: baseline;
+  flex-direction: column;
+  gap: var(--space-4);
   padding-block: var(--space-8);
 }
 
 .location__row-label {
   font: var(--text-button);
-  flex-shrink: 0;
-  min-width: 96px;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
@@ -294,7 +317,25 @@
   line-height: 1.5;
 }
 
-/* ===== 8. Love story ===== */
+/* ===== 8. Gifts ===== */
+.gifts {
+  text-align: center;
+}
+
+.gifts .section__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+  max-width: 480px;
+}
+
+.gifts__text {
+  opacity: 0.85;
+  line-height: 1.6;
+}
+
+/* ===== Love story (секция сейчас не используется в разметке) ===== */
 .love-story__timeline {
   list-style: none;
   margin: var(--space-32) 0 0;
@@ -388,21 +429,158 @@
   opacity: 0.35;
 }
 
+.checkbox-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-12);
+  margin-top: var(--space-8);
+}
+
+/* Checkbox: bordered "chip" button — the native input is visually hidden
+   but stays in the accessibility tree; :has() drives the selected state. */
+.checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-12);
+  font: var(--text-button);
+  letter-spacing: 0.03em;
+  padding: var(--space-12) var(--space-20);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 2px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.section--light .checkbox {
+  border-color: var(--color-hairline);
+}
+
+.checkbox input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.checkbox__box {
+  position: relative;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.checkbox__box::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: solid var(--color-white);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.checkbox:has(input:checked) {
+  background: var(--color-white);
+  color: var(--color-black);
+  border-color: var(--color-white);
+}
+
+.checkbox:has(input:checked) .checkbox__box {
+  background: var(--color-black);
+  border-color: var(--color-black);
+}
+
+.checkbox:has(input:checked) .checkbox__box::after {
+  opacity: 1;
+}
+
+.checkbox:has(input:focus-visible) {
+  outline: 1px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* Radio: segmented control — one bordered strip split into equal segments,
+   the selected segment fills solid instead of a separate dot indicator. */
 .radio-row {
   display: flex;
-  gap: var(--space-24);
+  width: 100%;
+  margin-top: var(--space-8);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.section--light .radio-row {
+  border-color: var(--color-hairline);
 }
 
 .radio {
+  position: relative;
+  flex: 1;
   display: flex;
   align-items: center;
-  gap: var(--space-8);
-  font: var(--text-body);
-  font-size: 15px;
+  justify-content: center;
+  text-align: center;
+  font: var(--text-button);
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  padding: var(--space-8) var(--space-12);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
-.radio input[type="radio"] {
-  accent-color: currentColor;
+.radio + .radio {
+  border-left: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.section--light .radio + .radio {
+  border-left-color: var(--color-hairline);
+}
+
+.radio input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.radio:has(input:checked) {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.radio:has(input:focus-visible) {
+  outline: 1px solid currentColor;
+  outline-offset: -2px;
+}
+
+/* Hover only for devices that actually have a mouse — otherwise a tap on
+   touchscreens leaves the border "stuck" highlighted until the next tap. */
+@media (hover: hover) and (pointer: fine) {
+  .checkbox:hover {
+    border-color: currentColor;
+  }
+
+  .radio:not(:has(input:checked)):hover {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .section--light .radio:not(:has(input:checked)):hover {
+    background: rgba(0, 0, 0, 0.04);
+  }
 }
 
 .button {
@@ -473,6 +651,30 @@
   opacity: 0.75;
 }
 
+/* ===== Childhood gallery ===== */
+.childhood-gallery {
+  text-align: center;
+}
+
+.childhood-gallery__grid {
+  margin-top: var(--space-32);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-16);
+}
+
+@media (min-width: 600px) {
+  .childhood-gallery__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.childhood-gallery__photo {
+  aspect-ratio: 1 / 1;
+  background: repeating-linear-gradient(45deg, #eee, #eee 10px, #f7f7f7 10px, #f7f7f7 20px);
+  border: 1px solid var(--color-hairline);
+}
+
 /* ===== 13. Footer ===== */
 .footer {
   text-align: center;
@@ -495,6 +697,57 @@
   font: var(--text-body-small);
   letter-spacing: 0.12em;
   opacity: 0.6;
+}
+
+/* ===== Music player ===== */
+.music-player {
+  position: fixed;
+  right: var(--space-16);
+  bottom: var(--space-16);
+  z-index: 100;
+}
+
+.music-player__toggle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--color-white);
+  background: rgba(18, 18, 18, 0.7);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.2s ease;
+}
+
+.music-player__toggle:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .music-player__toggle:hover:not(:disabled) {
+    opacity: 0.8;
+  }
+}
+
+.music-player__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.music-player__icon--pause {
+  display: none;
+}
+
+.music-player__toggle[aria-pressed="true"] .music-player__icon--play {
+  display: none;
+}
+
+.music-player__toggle[aria-pressed="true"] .music-player__icon--pause {
+  display: block;
 }
 
 /* ===== Responsive: desktop widen for grid-friendly sections ===== */
@@ -522,13 +775,14 @@
     max-width: 480px;
   }
 
-  .event-row {
+  .location__row {
     flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
+    align-items: baseline;
+    gap: var(--space-12);
   }
 
-  .event-row__addr {
-    text-align: right;
+  .location__row-label {
+    flex-shrink: 0;
+    min-width: 96px;
   }
 }
