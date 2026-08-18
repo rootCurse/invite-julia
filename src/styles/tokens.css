@@ -16,8 +16,8 @@
 
   /* Fonts */
   --font-script: "Marck Script", cursive;
-  --font-display: "Yeseva One", serif;
-  --font-body: "Montserrat", sans-serif;
+  --font-display: "Pattaya", serif;
+  --font-body: "Pattaya", sans-serif;
 
   /* Type ramp — matches Figma text styles */
   --text-monogram: 400 64px/1 var(--font-script);

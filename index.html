@@ -1,81 +1,79 @@
 <!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex, nofollow" />
-    <title>Александр и Юлия — 17 октября 2026</title>
-    <meta name="description" content="Приглашаем вас разделить с нами один из самых важных дней нашей жизни — 17 октября 2026 года." />
-    <meta property="og:title" content="Александр и Юлия — 17 октября 2026" />
-    <meta property="og:description" content="Приглашаем вас разделить с нами один из самых важных дней нашей жизни." />
-    <meta property="og:type" content="website" />
-    <link rel="icon" href="%BASE_URL%favicon.svg" type="image/svg+xml" />
-  </head>
-  <body>
-    <!-- 1. Обложка / Конверт -->
-    <!-- TODO: заменить public/photos/cover-bg.jpg на реальное фото пары -->
-    <section id="cover" class="section section--dark cover">
-      <div class="cover__frame">
-        <p class="cover__monogram">А&nbsp;&amp;&nbsp;Ю</p>
-      </div>
-      <h1 class="cover__names">Александр<br />&amp;<br />Юлия</h1>
-      <p class="cover__date">17 . 10 . 2026</p>
-      <a class="cover__hint" href="#welcome">Открыть приглашение ↓</a>
-    </section>
 
-    <!-- Плеер с музыкой: кнопка-иконка в правом нижнем углу, вкл/выкл фоновую песню -->
-    <!-- TODO: заменить public/audio/song.mp3 на реальный трек -->
-    <div class="music-player">
-      <audio id="music-audio" src="/audio/song.mp3" loop preload="none"></audio>
-      <button
-        type="button"
-        class="music-player__toggle"
-        id="music-toggle"
-        aria-label="Включить музыку"
-        aria-pressed="false"
-      >
-        <svg class="music-player__icon music-player__icon--play" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M8 5v14l11-7z" fill="currentColor" />
-        </svg>
-        <svg class="music-player__icon music-player__icon--pause" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor" />
-        </svg>
-      </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Александр и Юлия — 17 октября 2026</title>
+  <meta name="description"
+    content="Приглашаем вас разделить с нами один из самых важных дней нашей жизни — 17 октября 2026 года." />
+  <meta property="og:title" content="Александр и Юлия — 17 октября 2026" />
+  <meta property="og:description" content="Приглашаем вас разделить с нами один из самых важных дней нашей жизни." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="%BASE_URL%favicon.svg" type="image/svg+xml" />
+</head>
+
+<body>
+  <!-- 1. Обложка / Конверт -->
+  <!-- TODO: заменить public/photos/cover-bg.jpg на реальное фото пары -->
+  <section id="cover" class="section section--dark cover">
+    <div class="cover__frame">
+      <p class="cover__monogram">А&amp;Ю</p>
     </div>
+    <h1 class="cover__names">Александр<br />&amp;<br />Юлия</h1>
+    <p class="cover__date">17 . 10 . 2026</p>
+    <a class="cover__hint" href="#welcome">Открыть приглашение ↓</a>
+  </section>
 
-    <!-- 2. Приветственный текст -->
-    <section id="welcome" class="section section--light welcome reveal">
-      <div class="section__inner">
-        <p class="eyebrow">Дорогие наши родные и друзья!</p>
-        <p class="welcome__title welcome__title--pulse">Мы женимся!</p>
-        <p class="welcome__text">Мы бы очень хотели, чтобы вы прожили этот момент вместе с нами!</p>
+  <!-- Плеер с музыкой: кнопка-иконка в правом нижнем углу, вкл/выкл фоновую песню -->
+  <!-- TODO: заменить public/audio/song.mp3 на реальный трек -->
+  <div class="music-player">
+    <audio id="music-audio" src="/audio/song.mp3" loop preload="none"></audio>
+    <button type="button" class="music-player__toggle" id="music-toggle" aria-label="Включить музыку"
+      aria-pressed="false">
+      <svg class="music-player__icon music-player__icon--play" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M8 5v14l11-7z" fill="currentColor" />
+      </svg>
+      <svg class="music-player__icon music-player__icon--pause" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- 2. Приветственный текст -->
+  <section id="welcome" class="section section--light welcome reveal">
+    <div class="section__inner">
+      <p class="eyebrow">Дорогие наши родные и друзья!</p>
+      <p class="welcome__title welcome__title--pulse">Мы женимся!</p>
+      <p class="welcome__text">Мы бы очень хотели, чтобы вы прожили этот момент вместе с нами!</p>
+    </div>
+  </section>
+
+  <!-- 3. Таймер обратного отсчёта -->
+  <section id="countdown" class="section section--dark countdown reveal">
+    <p class="eyebrow">До свадьбы осталось</p>
+    <div class="countdown__row" id="countdown-row" data-target="2026-10-17T15:00:00+03:00">
+      <div class="countdown__unit">
+        <span class="countdown__num" data-unit="days">00</span>
+        <span class="countdown__label">дней</span>
       </div>
-    </section>
-
-    <!-- 3. Таймер обратного отсчёта -->
-    <section id="countdown" class="section section--dark countdown reveal">
-      <p class="eyebrow">До свадьбы осталось</p>
-      <div class="countdown__row" id="countdown-row" data-target="2026-10-17T15:00:00+03:00">
-        <div class="countdown__unit">
-          <span class="countdown__num" data-unit="days">00</span>
-          <span class="countdown__label">дней</span>
-        </div>
-        <div class="countdown__unit">
-          <span class="countdown__num" data-unit="hours">00</span>
-          <span class="countdown__label">час</span>
-        </div>
-        <div class="countdown__unit">
-          <span class="countdown__num" data-unit="minutes">00</span>
-          <span class="countdown__label">мин</span>
-        </div>
-        <div class="countdown__unit">
-          <span class="countdown__num" data-unit="seconds">00</span>
-          <span class="countdown__label">сек</span>
-        </div>
+      <div class="countdown__unit">
+        <span class="countdown__num" data-unit="hours">00</span>
+        <span class="countdown__label">час</span>
       </div>
-    </section>
+      <div class="countdown__unit">
+        <span class="countdown__num" data-unit="minutes">00</span>
+        <span class="countdown__label">мин</span>
+      </div>
+      <div class="countdown__unit">
+        <span class="countdown__num" data-unit="seconds">00</span>
+        <span class="countdown__label">сек</span>
+      </div>
+    </div>
+  </section>
 
-    <!-- 4. Дата, время и место -->
+  <!-- 4. Дата, время и место
     <section id="event-details" class="section section--light event-details reveal">
       <div class="section__inner">
         <h2 class="heading">Дата, время и место</h2>
@@ -90,14 +88,13 @@
           <p class="event-row__addr">Ресторан «RiverDonPark»</p>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <!-- 5. Программа дня -->
-    <section id="schedule" class="section section--dark schedule reveal">
+  <!-- 5. Программа дня -->
+  <!-- <section id="schedule" class="section section--dark schedule reveal">
       <h2 class="heading">Программа дня</h2>
       <p class="schedule__note">предварительный тайминг, уточняется</p>
       <ul class="schedule__list">
-        <li class="schedule__item"><span class="schedule__time">14:30</span><span>Сбор гостей у загса</span></li>
         <li class="schedule__item"><span class="schedule__time">15:00</span><span>Церемония росписи</span></li>
         <li class="schedule__item"><span class="schedule__time">15:30</span><span>Поздравления, фотосессия с гостями</span></li>
         <li class="schedule__item"><span class="schedule__time">16:30</span><span>Личная фотосессия пары</span></li>
@@ -109,161 +106,162 @@
         <li class="schedule__item"><span class="schedule__time">23:00</span><span>Торт, десерт</span></li>
         <li class="schedule__item"><span class="schedule__time">00:00</span><span>Продолжение вечера</span></li>
       </ul>
-    </section>
+    </section> -->
 
-    <!-- 6. Локация и карта проезда -->
-    <section id="location" class="section section--light location reveal">
-      <div class="section__inner">
-        <h2 class="heading">Как добраться</h2>
-        <!-- TODO: заменить на реальный iframe Яндекс.Карт, когда появится адрес -->
-        <div class="location__map-placeholder" role="img" aria-label="Здесь появится карта проезда">
+  <!-- 6. Локация и карта проезда -->
+  <section id="location" class="section section--light location reveal">
+    <div class="section__inner">
+      <h2 class="heading">Как добраться</h2>
+      <!-- TODO: заменить на реальный iframe Яндекс.Карт, когда появится адрес -->
+      <!-- <div class="location__map-placeholder" role="img" aria-label="Здесь появится карта проезда">
           <span>виджет карты (Яндекс.Карты)</span>
         </div>
         <div class="location__row">
           <span class="location__row-label">Городской Кировский отдел ЗАГС</span>
           <p>г.Ростов-на-Дону, пер. Университетский, 48/2А</p>
-        </div>
-        <div class="location__map-placeholder" role="img" aria-label="Здесь появится карта проезда">
-          <span>виджет карты (Яндекс.Карты)</span>
-        </div>
-        <div class="location__row">
-          <span class="location__row-label">Ресторан «RiverDonPark»</span>
-          <p>г. Ростов-на-Дону, ул. Левобережная 7Б, стр.2</p>
-        </div>
+        </div> -->
+      <div class="location__map-placeholder" role="img" aria-label="Здесь появится карта проезда">
+        <span>виджет карты (Яндекс.Карты)</span>
       </div>
-    </section>
+      <div class="location__row">
+        <span class="location__row-label">Ресторан «RiverDonPark»</span>
+        <p>г. Ростов-на-Дону, ул. Левобережная 7Б, стр.2</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- 7. Дресс-код -->
-    <section id="dresscode" class="section section--dark dresscode reveal">
-      <h2 class="heading">Дресс-код</h2>
-      <div class="dresscode__swatches">
-        <span class="dresscode__swatch dresscode__swatch--black" aria-hidden="true"></span>
-      </div>
-      <p class="dresscode__text">
-        Будем благодарны, если вы поддержите цветовую гамму нашего праздника —
-        чёрный и белый
+  <!-- 7. Дресс-код -->
+  <section id="dresscode" class="section section--dark dresscode reveal">
+    <h2 class="heading">Дресс-код</h2>
+    <div class="dresscode__swatches">
+      <span class="dresscode__swatch dresscode__swatch--black" aria-hidden="true"></span>
+    </div>
+    <p class="dresscode__text">
+      Будем благодарны, если вы поддержите цветовую гамму нашего праздника —
+      чёрный
+    </p>
+  </section>
+
+  <!-- 8. Пожелания по подаркам и цветам -->
+  <section id="gifts" class="section section--light gifts reveal">
+    <div class="section__inner">
+      <h2 class="heading">Подарки и цветы</h2>
+      <p class="gifts__text">
+        Мы очень ценим вашу заботу и внимание, и будем рады любому подарку.
+        И неважно в какой конверт вы его упакуете.
       </p>
-    </section>
+      <p class="gifts__text">
+        Пожалуйста, не дарите нам цветы. Мы будем счастливы получить бутылочку
+        вина, которую разделим однажды вечером.
+      </p>
+    </div>
+  </section>
 
-    <!-- 8. Пожелания по подаркам и цветам -->
-    <section id="gifts" class="section section--light gifts reveal">
-      <div class="section__inner">
-        <h2 class="heading">Подарки и цветы</h2>
-        <p class="gifts__text">
-          Мы очень ценим вашу заботу и внимание, и будем рады любому подарку.
-          И неважно в какой конверт вы его упакуете.
-        </p>
-        <p class="gifts__text">
-          Пожалуйста, не дарите нам цветы. Мы будем счастливы получить бутылочку
-          вина, которую разделим однажды вечером.
-        </p>
+  <!-- 9. RSVP-форма -->
+  <section id="rsvp" class="section section--dark rsvp reveal">
+    <div class="section__inner">
+      <h2 class="heading">Подтвердить присутствие</h2>
+      <p class="rsvp__note">Пожалуйста, ответьте до 1 сентября 2026</p>
+      <form id="rsvp-form" class="rsvp__form" novalidate>
+        <!-- honeypot anti-spam field -->
+        <input type="text" name="company" class="visually-hidden" tabindex="-1" autocomplete="off" />
+
+        <label class="field">
+          <span class="field__label">Имя и фамилия*</span>
+          <input class="field__input" type="text" name="guestName" required autocomplete="name" />
+        </label>
+
+        <fieldset class="field field--fieldset">
+          <legend class="field__label">Буду присутствовать*</legend>
+          <div class="radio-row">
+            <label class="radio">
+              <input type="radio" name="attending" value="yes" required />
+              Конечно приду
+            </label>
+            <label class="radio">
+              <input type="radio" name="attending" value="no" />
+              К сожалению, не смогу
+            </label>
+          </div>
+        </fieldset>
+
+        <label class="field">
+          <span class="field__label">Количество гостей, включая себя</span>
+          <input class="field__input" type="number" name="guestCount" min="1" value="1" />
+        </label>
+
+        <fieldset class="field field--fieldset">
+          <legend class="field__label">Буду с детьми</legend>
+          <div class="radio-row">
+            <label class="radio">
+              <input type="radio" name="withKids" value="no" checked />
+              Нет
+            </label>
+            <label class="radio">
+              <input type="radio" name="withKids" value="yes" />
+              Да
+            </label>
+          </div>
+          <input class="field__input field__input--kids" type="number" name="kidsCount" min="0"
+            placeholder="Сколько детей" disabled />
+        </fieldset>
+        <fieldset class="field field--fieldset">
+          <legend class="field__label">Какой алкоголь вы предпочитаете</legend>
+          <div class="checkbox-row">
+            <label class="checkbox">
+              <input type="checkbox" name="drinks" value="Красное вино" />
+              <span class="checkbox__box" aria-hidden="true"></span>
+              Красное вино
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="drinks" value="Белое вино" />
+              <span class="checkbox__box" aria-hidden="true"></span>
+              Белое вино
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="drinks" value="Сладкое игристое" />
+              <span class="checkbox__box" aria-hidden="true"></span>
+              Сладкое игристое
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="drinks" value="Просекко" />
+              <span class="checkbox__box" aria-hidden="true"></span>
+              Просекко
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="drinks" value="Виски" />
+              <span class="checkbox__box" aria-hidden="true"></span>
+              Виски
+            </label>
+            <label class="checkbox">
+              <input type="checkbox" name="drinks" value="Водка" />
+              <span class="checkbox__box" aria-hidden="true"></span>
+              Водка
+            </label>
+          </div>
+        </fieldset>
+
+        <button class="button" type="submit">Отправить</button>
+        <p class="rsvp__status" id="rsvp-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- 12. Контакты организаторов -->
+  <section id="contacts" class="section section--light contacts reveal">
+    <div class="section__inner">
+      <h2 class="heading">Контакты</h2>
+      <p class="contacts__note">Если возникнут вопросы — на связи наш координатор</p>
+      <div class="contacts__card">
+        <p class="contacts__name">Ксения</p>
+        <a href="tel:+79281457945" class="contacts__row">Телефон: +7-928-145-79-45</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- 9. RSVP-форма -->
-    <section id="rsvp" class="section section--dark rsvp reveal">
-      <div class="section__inner">
-        <h2 class="heading">Подтвердить присутствие</h2>
-        <p class="rsvp__note">Пожалуйста, ответьте до 1 сентября 2026</p>
-        <form id="rsvp-form" class="rsvp__form" novalidate>
-          <!-- honeypot anti-spam field -->
-          <input type="text" name="company" class="visually-hidden" tabindex="-1" autocomplete="off" />
-
-          <label class="field">
-            <span class="field__label">Имя и фамилия*</span>
-            <input class="field__input" type="text" name="guestName" required autocomplete="name" />
-          </label>
-
-          <fieldset class="field field--fieldset">
-            <legend class="field__label">Буду присутствовать*</legend>
-            <div class="radio-row">
-              <label class="radio">
-                <input type="radio" name="attending" value="yes" required />
-                Конечно приду
-              </label>
-              <label class="radio">
-                <input type="radio" name="attending" value="no" />
-                К сожалению, не смогу
-              </label>
-            </div>
-          </fieldset>
-
-          <label class="field">
-            <span class="field__label">Количество гостей, включая себя</span>
-            <input class="field__input" type="number" name="guestCount" min="1" value="1" />
-          </label>
-
-          <fieldset class="field field--fieldset">
-            <legend class="field__label">Буду с детьми</legend>
-            <div class="radio-row">
-              <label class="radio">
-                <input type="radio" name="withKids" value="no" checked />
-                Нет
-              </label>
-              <label class="radio">
-                <input type="radio" name="withKids" value="yes" />
-                Да
-              </label>
-            </div>
-            <input class="field__input field__input--kids" type="number" name="kidsCount" min="0" placeholder="Сколько детей" disabled />
-          </fieldset>
-          <fieldset class="field field--fieldset">
-            <legend class="field__label">Какой алкоголь вы предпочитаете</legend>
-            <div class="checkbox-row">
-              <label class="checkbox">
-                <input type="checkbox" name="drinks" value="Красное вино" />
-                <span class="checkbox__box" aria-hidden="true"></span>
-                Красное вино
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" name="drinks" value="Белое вино" />
-                <span class="checkbox__box" aria-hidden="true"></span>
-                Белое вино
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" name="drinks" value="Сладкое игристое" />
-                <span class="checkbox__box" aria-hidden="true"></span>
-                Сладкое игристое
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" name="drinks" value="Просекко" />
-                <span class="checkbox__box" aria-hidden="true"></span>
-                Просекко
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" name="drinks" value="Виски" />
-                <span class="checkbox__box" aria-hidden="true"></span>
-                Виски
-              </label>
-              <label class="checkbox">
-                <input type="checkbox" name="drinks" value="Водка" />
-                <span class="checkbox__box" aria-hidden="true"></span>
-                Водка
-              </label>
-            </div>
-          </fieldset>
-
-          <button class="button" type="submit">Отправить</button>
-          <p class="rsvp__status" id="rsvp-status" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-
-    <!-- 12. Контакты организаторов -->
-    <section id="contacts" class="section section--light contacts reveal">
-      <div class="section__inner">
-        <h2 class="heading">Контакты</h2>
-        <p class="contacts__note">Если возникнут вопросы — на связи наш координатор</p>
-        <div class="contacts__card">
-          <p class="contacts__name">Ксения</p>
-          <a href="tel:+79281457945" class="contacts__row">Телефон: +7-928-145-79-45</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Галерея с детскими фотографиями -->
-    <!-- TODO: заменить плейсхолдеры на реальные фото в public/photos/childhood/ -->
-    <section id="childhood-gallery" class="section section--dark childhood-gallery reveal">
+  <!-- Галерея с детскими фотографиями -->
+  <!-- TODO: заменить плейсхолдеры на реальные фото в public/photos/childhood/ -->
+  <!-- <section id="childhood-gallery" class="section section--dark childhood-gallery reveal">
       <div class="section__inner">
         <h2 class="heading">Мы в детстве</h2>
         <div class="childhood-gallery__grid">
@@ -275,15 +273,16 @@
           <span class="childhood-gallery__photo" aria-hidden="true"></span>
         </div>
       </div>
-    </section>
+    </section> -->
 
-    <!-- 13. Футер -->
-    <footer id="footer" class="section section--dark footer">
-      <p class="footer__thanks">Спасибо, что вы с нами.<br />До встречи 17 октября!</p>
-      <p class="footer__names">Александр &amp; Юлия</p>
-      <p class="footer__date">17 . 10 . 2026</p>
-    </footer>
+  <!-- 13. Футер -->
+  <footer id="footer" class="section section--dark footer">
+    <p class="footer__thanks">Спасибо, что вы с нами.<br />До встречи 17 октября!</p>
+    <p class="footer__names">Александр &amp; Юлия</p>
+    <p class="footer__date">17 . 10 . 2026</p>
+  </footer>
 
-    <script type="module" src="/src/main.js"></script>
-  </body>
+  <script type="module" src="/src/main.js"></script>
+</body>
+
 </html>

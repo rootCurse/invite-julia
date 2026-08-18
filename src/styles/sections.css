@@ -9,7 +9,7 @@
   text-align: center;
   padding-top: 96px;
   position: relative;
-  background-image: linear-gradient(rgba(18, 18, 18, 0.55), rgba(18, 18, 18, 0.55)), url("/photos/cover-bg.jpg");
+  background-image: linear-gradient(rgba(18, 18, 18, 0.55), rgba(18, 18, 18, 0.55)), url("/src/images/hero.jpg");
   background-size: cover;
   background-position: center;
 }
@@ -247,9 +247,12 @@
 }
 
 /* ===== 6. Location ===== */
+.location{
+    
+}
+
 .location__map-placeholder {
   height: 220px;
-  background: #ececec;
   border: 1px solid var(--color-hairline);
   display: flex;
   align-items: center;
@@ -294,13 +297,20 @@
 .dresscode__swatches {
   display: flex;
   gap: var(--space-16);
+  background-image: url('/src/images/code.PNG');
+  background-size:cover;
+  height: 384px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .dresscode__swatch {
-  width: 56px;
-  height: 56px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   border: 1px solid var(--color-white);
+  animation: pulse-scale 1.6s ease-in-out infinite;
 }
 
 .dresscode__swatch--black {
@@ -446,7 +456,7 @@
   gap: var(--space-12);
   font: var(--text-button);
   letter-spacing: 0.03em;
-  padding: var(--space-12) var(--space-20);
+  padding-right: 8px;
   border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 2px;
   cursor: pointer;
