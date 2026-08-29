@@ -285,6 +285,22 @@
   opacity: 0.75;
 }
 
+.location__row p.location__time {
+  font: var(--text-date-large);
+  opacity: 1;
+  margin-top: var(--space-8);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-8);
+}
+
+.location__time-label {
+  font: var(--text-h3-sub);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 1;
+}
+
 /* ===== 7. Dress code ===== */
 .dresscode {
   display: flex;
