@@ -26,21 +26,6 @@
     <a class="cover__hint" href="#welcome">Открыть приглашение ↓</a>
   </section>
 
-  <!-- Плеер с музыкой: кнопка-иконка в правом нижнем углу, вкл/выкл фоновую песню -->
-  <!-- TODO: заменить public/audio/song.mp3 на реальный трек -->
-  <div class="music-player">
-    <audio id="music-audio" src="/audio/song.mp3" loop preload="none"></audio>
-    <button type="button" class="music-player__toggle" id="music-toggle" aria-label="Включить музыку"
-      aria-pressed="false">
-      <svg class="music-player__icon music-player__icon--play" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M8 5v14l11-7z" fill="currentColor" />
-      </svg>
-      <svg class="music-player__icon music-player__icon--pause" viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M6 5h4v14H6zM14 5h4v14h-4z" fill="currentColor" />
-      </svg>
-    </button>
-  </div>
-
   <!-- 2. Приветственный текст -->
   <section id="welcome" class="section section--light welcome reveal">
     <div class="section__inner">
