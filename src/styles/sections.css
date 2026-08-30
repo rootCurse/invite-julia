@@ -52,7 +52,7 @@
   text-decoration: none;
   transition: opacity 0.2s ease;
   animation: envelope-fade-up-dim 0.8s ease both;
-  animation-delay: 0.6s;
+  animation-delay: 1.6s;
 }
 
 @keyframes envelope-open {
