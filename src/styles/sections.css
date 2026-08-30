@@ -343,6 +343,13 @@
   line-height: 1.5;
 }
 
+.dresscode__note {
+  font: var(--text-body-small);
+  max-width: 320px;
+  opacity: 0.6;
+  margin-top: calc(var(--space-8) * -1);
+}
+
 /* ===== 8. Gifts ===== */
 .gifts {
   text-align: center;
