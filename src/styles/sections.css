@@ -735,6 +735,57 @@
   opacity: 0.6;
 }
 
+/* ===== Music player ===== */
+.music-player {
+  position: fixed;
+  right: var(--space-16);
+  bottom: var(--space-16);
+  z-index: 100;
+}
+
+.music-player__toggle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid var(--color-white);
+  background: rgba(18, 18, 18, 0.7);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  transition: opacity 0.2s ease;
+}
+
+.music-player__toggle:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .music-player__toggle:hover:not(:disabled) {
+    opacity: 0.8;
+  }
+}
+
+.music-player__icon {
+  width: 20px;
+  height: 20px;
+}
+
+.music-player__icon--pause {
+  display: none;
+}
+
+.music-player__toggle[aria-pressed="true"] .music-player__icon--play {
+  display: none;
+}
+
+.music-player__toggle[aria-pressed="true"] .music-player__icon--pause {
+  display: block;
+}
+
 /* ===== Responsive: desktop widen for grid-friendly sections ===== */
 @media (min-width: 900px) {
   .countdown__row {
