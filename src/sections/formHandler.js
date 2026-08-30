@@ -1,16 +1,17 @@
-// TODO: заменить на реальный URL Google Apps Script Web App после его публикации (см. .claude/tech-stack.md, раздел 4)
-const APPS_SCRIPT_URL = "";
+const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxCRQzzPNm10klK3p_3GyukNaP4avDFapie8CuWD763k_mXSjJeOs89Ml7JnY-ltkUyxw/exec";
 
 async function submitToSheet(sheetName, data) {
   if (!APPS_SCRIPT_URL) {
-    // Пока endpoint не настроен — не роняем форму, просто логируем локально.
     console.info(`[demo] ${sheetName} submission (Apps Script URL not configured yet):`, data);
     return { ok: true, demo: true };
   }
 
+  // Content-Type: text/plain — "простой" заголовок без CORS-preflight (OPTIONS),
+  // который Apps Script Web App не умеет обрабатывать. doPost всё равно
+  // парсит тело как JSON независимо от заявленного типа.
   const response = await fetch(APPS_SCRIPT_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    headers: { "Content-Type": "text/plain;charset=utf-8" },
     body: JSON.stringify({ sheet: sheetName, ...data }),
   });
 
