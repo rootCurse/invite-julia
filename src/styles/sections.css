@@ -23,8 +23,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: envelope-open 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: 1.5s;
+  animation: envelope-open 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 1.2s;
 }
 
 .cover__monogram {
