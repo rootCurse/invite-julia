@@ -36,7 +36,7 @@
   font: var(--text-h1-names);
   margin: 0;
   animation: envelope-fade-up 0.8s ease both;
-  animation-delay: 2s;
+  animation-delay: 2.8s;
 }
 
 .cover__date {
@@ -44,7 +44,7 @@
   letter-spacing: 0.2em;
   margin: 0;
   animation: envelope-fade-up 0.8s ease both;
-  animation-delay: 2.15s;
+  animation-delay: 2.95s;
 }
 
 .cover__hint {
@@ -53,7 +53,7 @@
   text-decoration: none;
   transition: opacity 0.2s ease;
   animation: envelope-fade-up-dim 0.8s ease both;
-  animation-delay: 2.3s;
+  animation-delay: 3.1s;
 }
 
 @keyframes envelope-open {
