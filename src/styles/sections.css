@@ -24,7 +24,7 @@
   align-items: center;
   justify-content: center;
   animation: envelope-open 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
-  animation-delay: 1s;
+  animation-delay: 1.7s;
 }
 
 .cover__monogram {
@@ -36,7 +36,7 @@
   font: var(--text-h1-names);
   margin: 0;
   animation: envelope-fade-up 0.8s ease both;
-  animation-delay: 1.3s;
+  animation-delay: 2s;
 }
 
 .cover__date {
@@ -44,7 +44,7 @@
   letter-spacing: 0.2em;
   margin: 0;
   animation: envelope-fade-up 0.8s ease both;
-  animation-delay: 1.45s;
+  animation-delay: 2.15s;
 }
 
 .cover__hint {
@@ -53,7 +53,7 @@
   text-decoration: none;
   transition: opacity 0.2s ease;
   animation: envelope-fade-up-dim 0.8s ease both;
-  animation-delay: 1.6s;
+  animation-delay: 2.3s;
 }
 
 @keyframes envelope-open {
